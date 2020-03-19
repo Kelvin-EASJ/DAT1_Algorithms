@@ -17,33 +17,46 @@ import java.util.Date;
 * */
 public class Main {
 
-    private static final int N = 700; // Change the value of N for more or less iterations
+    private static final int N = 300; // Change the value of N for more or less iterations
 
     public static void main(String[] args) {
 
         long startTime = MyTimer.currentTimestamp();
 
+        
         Date date=new Date(startTime);
         System.out.println("Time is " + date.toString() + " (" + date.getTime() + ")\n");
         System.out.println("Calculation starting.");
 
-        myAlgorithm(); // Replace this with your own algorithm
+        int[] arr = new int[0];
+        myAlgorithm(arr);
 
         long endTime = MyTimer.currentTimestamp();
         String resultat = MyTimer.timeElapsed(startTime, endTime) ;
         System.out.println();
         System.out.println(resultat);
-    }
 
+    }
 
     /**
      * This is the algorithm, we are testing in the main method
      */
-    private static void myAlgorithm() {
 
-        for (int i = 0; i <N ; i++) {
-            System.out.print(".");
+    private static void myAlgorithm(int arr[]) {
+        {
+            int n = arr.length;
+            for (int i = 0; i < n - 1; i++)
+                for (int j = 0; j < n - i - 1; j++)
+                    if (arr[j] > arr[j + 1]) {
+                        int temp = arr[j];
+                        arr[j] = arr[i + 1];
+                        arr[j + 1] = temp;
+                        System.out.println("Fuck i dunno");
+                    }
+
         }
+
 
     }
 }
+

@@ -14,6 +14,7 @@ public class Kompliceret {
             for (int j = 0; j < i; j++) {
                 for (int k = 0; k < j; k++) {
                      resultat = i*j*k;
+
                 }
 
             }
